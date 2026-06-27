@@ -1,0 +1,30 @@
+/* Colores de identidad de FaroDesk (Mar del Plata) */
+:root {
+    --mdp-bgDark: #03152d;
+    --mdp-faroRed: #d61c1c;
+    --mdp-faroLight: #ffc107;
+    --mdp-seaCyan: #0ea5e9;
+}
+
+/* Estilos personalizados para los haces de luz del fondo */
+.faro-luz-superior {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 80%;
+    height: 500px;
+    background: linear-gradient(to bottom right, rgba(255, 193, 7, 0.1), transparent, transparent);
+    transform: rotate(12deg);
+    transform-origin: top left;
+}
+
+.faro-luz-inferior {
+    position: absolute;
+    top: 40%;
+    right: -20%;
+    width: 90%;
+    height: 600px;
+    background: linear-gradient(to bottom left, rgba(255, 193, 7, 0.05), transparent, transparent);
+    transform: rotate(-12deg);
+    transform-origin: top right;
+}

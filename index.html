@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaroDesk - Sistema de gestión para servicios técnicos</title>
+    <meta name="description" content="FaroDesk es un sistema de gestión para servicios técnicos: tickets, presupuestos, caja, comprobantes y entregas en red local. Probalo gratis durante 7 días.">
+    <link rel="canonical" href="https://www.mardeltech.com/farodesklanding/">
+    <meta property="og:title" content="FaroDesk - Sistema para servicios técnicos">
+    <meta property="og:description" content="Ordená tickets, caja y entregas de tu servicio técnico con una app local pensada para talleres.">
+    <meta property="og:image" content="https://www.mardeltech.com/farodesklanding/images/FaroDeskBanner.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="images/favicon-1024.png">
+
+    <!-- Carga del motor de Tailwind. Para producción conviene reemplazarlo por CSS compilado. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mdp: {
+                            bgDark: 'var(--mdp-bgDark)',
+                            faroRed: 'var(--mdp-faroRed)',
+                            faroLight: 'var(--mdp-faroLight)',
+                            seaCyan: 'var(--mdp-seaCyan)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-gray-950 font-sans antialiased relative">
+
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="faro-luz-superior"></div>
+        <div class="faro-luz-inferior"></div>
+    </div>
+
+    <header class="bg-white/90 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="images/favicon-1024.png" alt="FaroDesk" width="32" height="32" class="w-8 h-8 rounded-lg shadow-sm" onerror="this.style.display='none';">
+                <span class="text-2xl font-black tracking-tight text-mdp-bgDark">Faro<span class="text-mdp-faroRed">Desk</span></span>
+            </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-600">
+                <a href="#flujo" class="hover:text-mdp-faroRed transition">Cómo funciona</a>
+                <a href="#tickets" class="hover:text-mdp-faroRed transition">Tickets</a>
+                <a href="#caja" class="hover:text-mdp-faroRed transition">Caja</a>
+                <a href="#red" class="hover:text-mdp-faroRed transition">Red local</a>
+                <a href="#faqs" class="hover:text-mdp-faroRed transition">Preguntas</a>
+            </nav>
+            <div>
+                <a href="#contacto" class="bg-mdp-bgDark text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-opacity-90 transition border border-transparent hover:border-mdp-faroLight/30">
+                    Probar sistema
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative overflow-hidden border-b border-gray-200 min-h-[calc(100vh-4rem)] lg:min-h-[680px] flex items-center z-10">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row w-full">
+                <div class="w-full lg:w-1/2 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+                    <span class="text-xs font-bold tracking-widest text-mdp-faroRed uppercase mb-3 block">
+                        Software de gestión local y red centralizada
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl font-black text-mdp-bgDark tracking-tight leading-none mb-6">
+                        Ordená tickets, caja y entregas de tu servicio técnico en un solo sistema.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        FaroDesk centraliza ingresos, presupuestos, estados, comprobantes y caja diaria en una app local, rápida y pensada para talleres que no pueden depender de planillas ni WhatsApp.
+                    </p>
+
+                    <ul class="space-y-3.5 mb-8 text-gray-700 font-medium">
+                        <li class="flex items-start gap-3">
+                            <span class="text-mdp-faroRed text-lg mt-0.5" aria-hidden="true">✦</span>
+                            <span>Flujo operativo específico para talleres de reparación y electrónica.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-mdp-faroRed text-lg mt-0.5" aria-hidden="true">✦</span>
+                            <span>Módulo de caja separado para controlar anticipos, saldos y cierres diarios.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-mdp-faroRed text-lg mt-0.5" aria-hidden="true">✦</span>
+                            <span>Instalación remota incluida, funcionamiento en red local y soporte por WhatsApp.</span>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <a href="#contacto" class="bg-mdp-faroRed text-white px-8 py-4 rounded-xl text-center font-bold shadow-lg shadow-red-200 hover:bg-opacity-90 transition transform hover:-translate-y-0.5 border-b-4 border-black/20">
+                            Solicitar prueba gratis de 7 días
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 relative flex items-center justify-center p-4 lg:p-8">
+                    <div class="w-full max-w-xl bg-mdp-bgDark rounded-3xl shadow-2xl overflow-hidden border border-slate-800 relative group aspect-[16/9] lg:aspect-auto">
+                        <img src="images/FaroDeskBanner.png" alt="Ecosistema FaroDesk: del caos al orden" width="1408" height="768" class="w-full h-full lg:h-auto object-cover object-center block min-h-[280px] bg-slate-900" decoding="async" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="problema" class="py-20 border-b border-gray-200 relative z-10">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-black text-mdp-bgDark mb-6">¿Tu taller sigue funcionando con cuadernos, Excel o WhatsApp?</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Trabajar sin orden provoca pérdida de datos, dudas sobre el estado de cada equipo y descontrol en la caja. <strong>FaroDesk centraliza tu laboratorio</strong>: cada ingreso genera trazabilidad completa, presupuestos claros e historial transparente para tus clientes.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white border-b border-gray-200 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest text-mdp-faroRed uppercase mb-2 block">Ideal para</span>
+                        <h2 class="text-3xl font-black text-mdp-bgDark mb-5">Talleres que necesitan ordenar el mostrador sin complicar al equipo.</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                            FaroDesk está pensado para servicios técnicos de celulares, informática, electrónica, consolas y negocios con recepción, laboratorio y caja trabajando sobre los mismos datos.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-slate-50 p-5 rounded-xl border border-gray-200">
+                            <h3 class="font-bold text-mdp-bgDark text-sm mb-2">Recepción ordenada</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">Ingreso de clientes, equipos, fallas y comprobantes desde el primer contacto.</p>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded-xl border border-gray-200">
+                            <h3 class="font-bold text-mdp-bgDark text-sm mb-2">Laboratorio trazable</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">Estados, presupuestos, reparaciones, garantías y alertas por demora.</p>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded-xl border border-gray-200">
+                            <h3 class="font-bold text-mdp-bgDark text-sm mb-2">Caja clara</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">Anticipos, saldos, devoluciones, recibos y cierre diario sin mezclar áreas.</p>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded-xl border border-gray-200">
+                            <h3 class="font-bold text-mdp-bgDark text-sm mb-2">Red local</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">Terminales conectadas al mismo servidor para trabajar aun si internet falla.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="flujo" class="py-20 bg-white border-b border-gray-200 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-bold tracking-widest text-mdp-faroRed uppercase mb-2 block">Operatoria diaria</span>
+                    <h2 class="text-3xl font-black text-mdp-bgDark">El camino hacia un taller 100% bajo control</h2>
+                    <p class="text-sm text-gray-500 mt-2">FaroDesk convierte el ingreso de un equipo en un proceso transparente, rápido y libre de errores humanos.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200">
+                        <span class="text-2xl font-black text-mdp-faroRed/30 block mb-3">01</span>
+                        <h3 class="font-bold text-base text-mdp-bgDark mb-2">Ingreso seguro</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Registrás al cliente por su documento de identidad, asociás marca, modelo y falla. Generás un ticket único y el PDF de ingreso.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200">
+                        <span class="text-2xl font-black text-mdp-faroRed/30 block mb-3">02</span>
+                        <h3 class="font-bold text-base text-mdp-bgDark mb-2">Presupuesto claro</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">El técnico evalúa, carga costos y envía el presupuesto. Todo queda asentado en el historial técnico tanto si acepta como si rechaza.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200">
+                        <span class="text-2xl font-black text-mdp-faroRed/30 block mb-3">03</span>
+                        <h3 class="font-bold text-base text-mdp-bgDark mb-2">Reparación alerta</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">El equipo avanza por estados como <em>En reparación</em> o <em>Listo</em>. Si un ticket se demora más de lo configurado, salta una alerta visual.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200">
+                        <span class="text-2xl font-black text-mdp-faroRed/30 block mb-3">04</span>
+                        <h3 class="font-bold text-base text-mdp-bgDark mb-2">Entrega y caja</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Registrás el trabajo realizado y los días de garantía. Se genera el movimiento automático en caja para liquidar la cuenta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tickets" class="py-20 border-b border-gray-200 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="w-full lg:w-1/2 flex justify-center">
+                        <img src="images/tickets-1024.png" alt="Módulo de tickets de FaroDesk" width="1254" height="1254" loading="lazy" decoding="async" class="w-full max-w-sm aspect-square object-cover rounded-3xl shadow-xl border border-gray-200" onerror="this.style.display='none';">
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <span class="text-xs font-bold tracking-widest text-mdp-faroRed uppercase mb-2 block">Trazabilidad absoluta</span>
+                        <h2 class="text-3xl font-black text-mdp-bgDark mb-6">Gestión de tickets e historial técnico</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                            Cada equipo entra con un código único asociado a su sucursal o técnico. Registrá datos de cliente por su documento de identidad, marcas, modelos y la descripción exacta de la falla. El sistema documenta cambios de estado, envío de presupuestos y días de garantía para evitar cualquier tipo de discusión interna o con el cliente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="caja" class="py-20 border-b border-gray-200 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+                    <div class="w-full lg:w-1/2 flex justify-center">
+                        <img src="images/caja-1024.png" alt="Módulo de caja de FaroDesk" width="1254" height="1254" loading="lazy" decoding="async" class="w-full max-w-sm aspect-square object-cover rounded-3xl shadow-xl border border-gray-200" onerror="this.style.display='none';">
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <span class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-2 block">Área comercial blindada</span>
+                        <h2 class="text-3xl font-black text-mdp-bgDark mb-6">Una caja blindada. Cuentas claras todos los días.</h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            En un negocio real, mezclar el laboratorio técnico con el manejo del dinero es un peligro. FaroDesk separa por completo la pantalla de los técnicos del módulo de caja diaria.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-700 font-medium">
+                            <li><strong>Control de anticipos y saldos:</strong> sabé cuánto dejó el cliente a cuenta y cuánto resta cobrar.</li>
+                            <li><strong>Neto del día automático:</strong> reportes limpios con cobrados, devoluciones y total neto real.</li>
+                            <li><strong>Recibos a un clic:</strong> emití comprobantes en PDF y envíalos directo por WhatsApp en el acto.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="red" class="py-20 bg-white border-b border-gray-200 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-bold tracking-widest text-mdp-faroRed uppercase mb-2 block">Estabilidad local</span>
+                    <h2 class="text-3xl font-black text-mdp-bgDark">Olvidate de depender de internet. Tu servidor, tus datos.</h2>
+                    <p class="text-sm text-gray-500 mt-2">Muchos sistemas web te bloquean si te quedas sin conexión en el local. FaroDesk corre de forma interna.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 flex gap-4 items-center shadow-sm">
+                        <img src="images/servidor-1024.png" alt="Servidor central de FaroDesk" width="1254" height="1254" loading="lazy" decoding="async" class="w-20 h-20 rounded-xl object-cover border border-gray-100 bg-mdp-bgDark shrink-0" onerror="this.style.display='none';">
+                        <div>
+                            <h3 class="font-bold text-mdp-bgDark text-base mb-1">Gateway / servidor central</h3>
+                            <p class="text-sm text-gray-600">Centraliza los datos en una base PostgreSQL detrás del gateway. Máxima protección local para que el negocio nunca se detenga.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 flex gap-4 items-center shadow-sm">
+                        <img src="images/terminal-1024.png" alt="Terminales conectadas en red local" width="1254" height="1254" loading="lazy" decoding="async" class="w-20 h-20 rounded-xl object-cover border border-gray-100 bg-mdp-bgDark shrink-0" onerror="this.style.display='none';">
+                        <div>
+                            <h3 class="font-bold text-mdp-bgDark text-base mb-1">Terminales en red</h3>
+                            <p class="text-sm text-gray-600">Conecta la recepción, las computadoras del laboratorio y la caja a la misma red local. Datos centralizados, estables y siempre sincronizados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faqs" class="py-20 bg-white border-b border-gray-200 relative z-10">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-bold tracking-widest text-mdp-faroRed uppercase mb-2 block">Resolvemos tus dudas</span>
+                    <h2 class="text-3xl font-black text-mdp-bgDark">Preguntas frecuentes</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-200">
+                        <h3 class="font-bold text-sm text-mdp-bgDark mb-2">¿Cómo funciona la prueba gratuita de 7 días?</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Completás el formulario de contacto con los datos de tu negocio y nos comunicamos con vos para coordinar una instalación remota. Te configuramos el sistema completo en tu servidor local para que puedas usar todas las funciones sin restricciones durante 7 días.</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-200">
+                        <h3 class="font-bold text-sm text-mdp-bgDark mb-2">¿Qué pasa si me quedo sin internet en el local?</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Al ser un sistema que corre en una PC servidor dentro de tu propio local, FaroDesk no depende de una conexión a internet para operar el mostrador, la caja o el laboratorio técnico. El sistema seguirá funcionando al 100% de forma interna. Internet solo se utiliza para la validación automática de la licencia comercial.</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-200">
+                        <h3 class="font-bold text-sm text-mdp-bgDark mb-2">¿Puedo separar el acceso de los técnicos del área de caja?</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Sí, por completo. El sistema cuenta con administración de usuarios y roles (administrador y operadores). Además, viene con accesos directos separados para el módulo de Servicio Técnico (Tickets) y el módulo de Caja, impidiendo interferencias entre áreas.</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-200">
+                        <h3 class="font-bold text-sm text-mdp-bgDark mb-2">¿El sistema incluye soporte técnico?</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Si. Al contratar el servicio tenés incluido el soporte técnico directo a través de WhatsApp en horario comercial. Te acompañamos tanto en la instalación remota inicial como ante cualquier duda operativa diaria.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-20 relative z-10">
+            <div class="max-w-3xl mx-auto px-4">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold tracking-widest text-mdp-faroRed uppercase mb-2 block">Prueba sin compromiso</span>
+                    <h2 class="text-3xl font-black text-mdp-bgDark tracking-tight mb-2">Solicitá tu prueba de 7 días</h2>
+                    <p class="text-gray-600 text-sm">Completá el formulario. Nos encargamos de la instalación remota y la puesta en marcha de FaroDesk.</p>
+                </div>
+                <div class="mb-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+                        <p class="font-bold text-sm text-mdp-bgDark">Instalación remota</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+                        <p class="font-bold text-sm text-mdp-bgDark">Funciones completas</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+                        <p class="font-bold text-sm text-mdp-bgDark">Soporte inicial</p>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-2xl p-1 border border-gray-300 shadow-inner overflow-hidden">
+                    <!-- Reemplazar YOUR_FORM_ID por el ID real del Google Form antes de publicar. -->
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSfD_XUvM_YOUR_FORM_ID/viewform?embedded=true"
+                        width="100%"
+                        height="680"
+                        frameborder="0"
+                        marginheight="0"
+                        marginwidth="0"
+                        loading="lazy"
+                        class="rounded-xl bg-white">
+                        Cargando formulario...
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="py-20 border-b border-gray-200 relative z-10">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold tracking-widest text-mdp-faroRed uppercase mb-2 block">Nuestro rumbo</span>
+                    <h2 class="text-3xl font-black text-mdp-bgDark">La solidez y la guía que tu mostrador necesita</h2>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 space-y-5 text-gray-600 text-sm leading-relaxed">
+                    <p>
+                        El nombre <strong>FaroDesk</strong> evoca las raíces de su desarrollo en la costa, buscando referenciar la solidez, la guía y la estabilidad que un faro representa para los navegantes, aplicándolo de forma directa al rumbo operativo y financiero de tu negocio.
+                    </p>
+                    <p>
+                        Llevamos esa misma filosofía al software de gestión. Sabemos que el día a día de un servicio técnico puede volverse caótico: hojas que se pierden, registros manuales confusos, mensajes desordenados y dudas sobre a quién pertenece cada equipo.
+                    </p>
+                    <p>
+                        FaroDesk nace para ser esa guía estable en tu negocio. Desarrollamos una herramienta robusta, pensada para las dinámicas del comercio real, que te da la tranquilidad de saber que tus datos están seguros en tu propio servidor local, listos para hacer crecer tu taller.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-mdp-bgDark text-slate-500 text-xs py-8 border-t border-slate-800 text-center relative z-10">
+        <p>&copy; 2026 FaroDesk. Todos los derechos reservados. Desarrollado con el respaldo y la solidez del Faro.</p>
+    </footer>
+
+</body>
+</html>
+
