@@ -274,41 +274,60 @@
             </div>
         </section>
 
-        <section id="contacto" class="py-20 relative z-10">
-            <div class="max-w-3xl mx-auto px-4">
-                <div class="text-center mb-10">
-                    <span class="text-xs font-bold tracking-widest text-mdp-faroRed uppercase mb-2 block">Prueba sin compromiso</span>
-                    <h2 class="text-3xl font-black text-mdp-bgDark tracking-tight mb-2">Solicitá tu prueba de 7 días</h2>
-                    <p class="text-gray-600 text-sm">Completá el formulario. Nos encargamos de la instalación remota y la puesta en marcha de FaroDesk.</p>
-                </div>
-                <div class="mb-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                    <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
-                        <p class="font-bold text-sm text-mdp-bgDark">Instalación remota</p>
-                    </div>
-                    <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
-                        <p class="font-bold text-sm text-mdp-bgDark">Funciones completas</p>
-                    </div>
-                    <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
-                        <p class="font-bold text-sm text-mdp-bgDark">Soporte inicial</p>
-                    </div>
-                </div>
-                <div class="bg-gray-100 rounded-2xl p-1 border border-gray-300 shadow-inner overflow-hidden">
-                    <!-- Reemplazar YOUR_FORM_ID por el ID real del Google Form antes de publicar. -->
-                    <iframe
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSfD_XUvM_YOUR_FORM_ID/viewform?embedded=true"
-                        width="100%"
-                        height="680"
-                        frameborder="0"
-                        marginheight="0"
-                        marginwidth="0"
-                        loading="lazy"
-                        class="rounded-xl bg-white">
-                        Cargando formulario...
-                    </iframe>
-                </div>
+<!-- SECCIÓN CONTACTO (Formulario de Descarga Directa) -->
+    <section id="contacto" class="py-20 relative z-10">
+        <div class="max-w-xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black text-mdp-bgDark tracking-tight mb-2">Descargá tu prueba de 30 días</h2>
+                <p class="text-gray-600 text-sm">Ingresá tus datos para iniciar la descarga inmediata del instalador de FaroDesk.</p>
             </div>
-        </section>
+            
+            <!-- El action apunta al archivo PHP que armaste (ej: procesar.php) -->
+            <form action="descargar.php" method="POST" class="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl space-y-5">
+                
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Nombre Completo / Taller</label>
+                    <input type="text" name="nombre" required placeholder="Ej: Servicio Técnico Faku" 
+                           class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-mdp-faroRed/20 focus:border-mdp-faroRed text-sm transition">
+                </div>
 
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Ciudad</label>
+                        <input type="text" name="ciudad" required placeholder="Ej: Mar del Plata" 
+                               class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-mdp-faroRed/20 focus:border-mdp-faroRed text-sm transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2">País</label>
+                        <input type="text" name="pais" required placeholder="Ej: Argentina" 
+                               class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-mdp-faroRed/20 focus:border-mdp-faroRed text-sm transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Correo Electrónico</label>
+                    <input type="email" name="email" required placeholder="ejemplo@correo.com" 
+                           class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-mdp-faroRed/20 focus:border-mdp-faroRed text-sm transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Teléfono (WhatsApp)</label>
+                    <input type="tel" name="telefono" required placeholder="Ej: +54 9 223 1234567" 
+                           class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-mdp-faroRed/20 focus:border-mdp-faroRed text-sm transition">
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-mdp-faroRed text-white py-4 rounded-xl font-bold shadow-lg shadow-red-200 hover:bg-opacity-90 transition transform hover:-translate-y-0.5 border-b-4 border-black/20 text-center block">
+                        Comenzar Descarga Gratis
+                    </button>
+                </div>
+                
+                <p class="text-[11px] text-center text-gray-400 leading-tight">
+                    Al hacer clic, se guardará tu registro de prueba y comenzará la descarga de FaroDesk-Setup.exe de forma inmediata.
+                </p>
+            </form>
+        </div>
+    </section>
         <section id="nosotros" class="py-20 border-b border-gray-200 relative z-10">
             <div class="max-w-4xl mx-auto px-4">
                 <div class="text-center mb-10">
