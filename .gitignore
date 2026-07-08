@@ -2,3 +2,4 @@ credentials.json
 config.php
 .env
 vendor/
+downloads/
