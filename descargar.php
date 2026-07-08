@@ -1,20 +1,35 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
+$configPath = __DIR__ . '/config.php';
+$config = is_file($configPath) ? require $configPath : [];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre   = $_POST['nombre'] ?? '';
-    $ciudad   = $_POST['ciudad'] ?? '';
-    $pais     = $_POST['pais'] ?? '';
-    $email    = $_POST['email'] ?? '';
-    $telefono = $_POST['telefono'] ?? '';
-    
+    if (!empty($_POST['sitio_web'] ?? '')) {
+        http_response_code(204);
+        exit;
+    }
+
+    $nombre = trim($_POST['nombre'] ?? '');
+    $ciudad = trim($_POST['ciudad'] ?? '');
+    $pais = trim($_POST['pais'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $telefono = trim($_POST['telefono'] ?? '');
+
     date_default_timezone_set('America/Argentina/Buenos_Aires');
     $fecha = date('d/m/Y H:i:s');
 
-    $spreadsheetId = 'TU_ID_DE_PLANILLA_AQUÍ';
-    $jsonKeyPath = __DIR__ . '/credentials.json'; // Tu archivo JSON de Cuenta de Servicio
+    $spreadsheetId = $config['spreadsheet_id'] ?? '';
+    $sheetRange = $config['sheet_range'] ?? 'datosdescargas';
+    $downloadPath = $config['download_path'] ?? '/protected-downloads/FaroDeskSetup.exe';
+    $downloadName = $config['download_name'] ?? 'FaroDeskSetup.exe';
+    $jsonKeyPath = __DIR__ . '/credentials.json';
 
     try {
+        if ($spreadsheetId === '') {
+            throw new RuntimeException('Falta configurar spreadsheet_id.');
+        }
+
         $client = new \Google_Client();
         $client->setApplicationName('FaroDesk Landing Leads');
         $client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
@@ -22,24 +37,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $service = new \Google_Service_Sheets($client);
 
-        // Armamos la fila con los datos recibidos
         $newRow = [$fecha, $nombre, $ciudad, $pais, $email, $telefono];
-        
+
         $valueRange = new \Google_Service_Sheets_ValueRange();
         $valueRange->setValues([$newRow]);
 
-        $range = 'Sheet1'; // Detecta automáticamente la última fila libre de la hoja
         $options = ['valueInputOption' => 'USER_ENTERED'];
+        $service->spreadsheets_values->append($spreadsheetId, $sheetRange, $valueRange, $options);
 
-        // Guardar la fila
-        $service->spreadsheets_values->append($spreadsheetId, $range, $valueRange, $options);
-
-        // Forzar la descarga inmediata del instalador en el navegador
-        header('Location: images/FaroDeskBanner.png'); // Reemplazar por la ruta del instalador .exe
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename="' . $downloadName . '"');
+        header('X-Accel-Redirect: ' . $downloadPath);
         exit;
-
     } catch (Exception $e) {
-        error_log("Error en Sheets: " . $e->getMessage());
-        echo "Ocurrió un problema, intentá de nuevo más tarde.";
+        error_log('Error en Sheets: ' . $e->getMessage());
+        echo 'Ocurrio un problema, intenta de nuevo mas tarde.';
     }
 }

@@ -284,6 +284,10 @@
             
             <!-- El action apunta al archivo PHP que armaste (ej: procesar.php) -->
             <form action="descargar.php" method="POST" class="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl space-y-5">
+                <div class="hidden" aria-hidden="true">
+                    <label for="sitio_web">Sitio web</label>
+                    <input type="text" id="sitio_web" name="sitio_web" tabindex="-1" autocomplete="off">
+                </div>
                 
                 <div>
                     <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Nombre Completo / Taller</label>
